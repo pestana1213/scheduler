@@ -1,0 +1,12 @@
+type Query {
+    processMessage(message: String!): String
+}
+
+type Response {
+    success: Boolean!
+    message: String!
+}
+
+type Mutation {
+    schedule(date: String!, hour: String!, description: String): Response!
+}
