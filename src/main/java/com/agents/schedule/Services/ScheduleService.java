@@ -24,10 +24,10 @@ public class ScheduleService {
 
     private final CompiledGraph<MyState> compiledGraph;
 
-    public ScheduleService() throws GraphStateException {
+    public ScheduleService(CalendarService calendarService) throws GraphStateException {
         GreeterNode greeterNode = new GreeterNode();
         ResponderNode responderNode = new ResponderNode();
-        LogicNode logicNode = new LogicNode();
+        LogicNode logicNode = new LogicNode(calendarService);
 
         StateGraph<MyState> stateGraph = new StateGraph<>(MyState.SCHEMA, MyState::new)
                 .addNode("greeter", node_async(greeterNode))

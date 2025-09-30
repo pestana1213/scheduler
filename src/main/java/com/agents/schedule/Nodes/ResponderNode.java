@@ -34,7 +34,7 @@ public class ResponderNode implements NodeAction<MyState> {
 
         String reply;
         if (matchedMessage.isPresent()) {
-            reply = responderAgent.replyMessage(matchedMessage.get());
+            reply = "We were able to schedule your appointment";//responderAgent.replyMessage(matchedMessage.get());
         } else {
             reply = "No logic found.";
         }
